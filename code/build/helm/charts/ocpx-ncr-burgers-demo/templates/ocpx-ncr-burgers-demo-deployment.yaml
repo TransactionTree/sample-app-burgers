@@ -1,0 +1,96 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ $.Release.Name }}
+  labels:
+    app: {{ .Values.Master.App.Prefix }}
+    version: {{ $.Chart.Version }}
+    release: {{ $.Release.Name }}
+spec:
+  {{- if .Values.Scaling.Enabled }}
+  replicas: {{ .Values.Scaling.DefaultReplicas }}
+  {{- end }}
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.Master.App.Prefix }}
+        version: {{ $.Chart.Version }}
+        release: {{ $.Release.Name }}
+    spec:
+      restartPolicy: Always
+      volumes:
+      - name: shared-data
+        emptyDir: {}
+      containers:
+        - name: {{ $.Release.Name }}-django
+          image: {{ .Values.Image.Domain }}/{{ .Values.Image.Project }}/{{ .Values.Master.App.Prefix }}-django:{{ $.Chart.Version }}
+          imagePullPolicy: {{ .Values.Master.ImagePullPolicy }}
+          env:
+            - name: URL_BASE
+              value: {{ quote .Values.Ingress.Burgers.Host }}
+            - name: SECRET_KEY
+              value: {{ quote .Values.Burgers.SecretKey }}
+            - name: NEP_USERNAME
+              value: {{ quote .Values.Burgers.NepUsername }}
+            - name: NEP_PASSWORD
+              value: {{ quote .Values.Burgers.NepPassword }}
+            - name: NEP_APPLICATION_KEY
+              value: {{ quote .Values.Burgers.NepApplicationKey }}
+            - name: NEP_ORGANIZATION
+              value: {{ quote .Values.Burgers.NepOrganization }}
+            - name: NEP_SHARED_KEY
+              value: {{ quote .Values.Burgers.NepSharedKey }}
+            - name: HMAC_SHARED_KEY
+              value: {{ quote .Values.Burgers.HmacSharedKey }}
+            - name: HMAC_SECRET_KEY
+              value: {{ quote .Values.Burgers.HmacSecretKey }}
+            - name: CENSUS_API_KEY
+              value: {{ quote .Values.Burgers.CensusApiKey }}
+            - name: LOCATIONS
+              value: {{ quote .Values.Burgers.Locations }}
+          ports:
+            - name: http
+              containerPort: 8000
+              protocol: TCP
+          volumeMounts:
+            - name: shared-data
+              mountPath: /app/dist
+        - name: {{ $.Release.Name }}-nginx
+          image: {{ .Values.Image.Domain }}/{{ .Values.Image.Project }}/{{ .Values.Master.App.Prefix }}-nginx:{{ $.Chart.Version }}
+          imagePullPolicy: {{ .Values.Master.ImagePullPolicy }}
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          volumeMounts:
+            - name: shared-data
+              mountPath: /app/dist
+          livenessProbe:
+            httpGet:
+              path: /burger
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 1
+            successThreshold: 1
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /burger
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 1
+            successThreshold: 1
+            failureThreshold: 3
+          {{- if .Values.Scaling.Burgers.Enabled }}
+          resources:
+            requests:
+              cpu: {{ .Values.Resources.Burgers.MinCpu | quote }}
+              memory: {{ .Values.Resources.Burgers.MinMemory | quote }}
+            limits:
+              cpu: {{ .Values.Resources.Burgers.MaxCpu | quote }}
+              memory: {{ .Values.Resources.Burgers.MaxMemory | quote }}
+          {{- end }}
+status: {}

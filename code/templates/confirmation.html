@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_tags %}
+{% block title %}<title>The End</title>{% endblock %}
+
+{% block content %}
+<br><br>
+<div class="container">
+<div class="jumbotron">
+  <h1 class="display-4">The End <i class="fa fa-heart" style="color:#7ed957"></i> </h1>
+  <p class="lead">Thanks for checking out our demo! We hope to improve on it and make it better. If you have any questions about the APIs used within the demo, head over the documentation tab it has in-depth information about how to get stared and how things are linked together.  </p>
+  <hr class="my-4">
+  <p>If you are more of the adventurous type head over to the Devex portal and check out the APIs, if you ever feel imitated, we will be right here for you. We promise, they pay us to help you.<i> Oh yeah! We got your food order. Working on that, 100%!</i> </p>
+
+  <p class="lead">
+    <a class="btn btn-custom btn-lg" href="https://developer.ncr.com/portals/dev-portal/api-explorer" role="button">Onward to Adventure</a>
+  </p>
+</div>
+</div>
+{% endblock %}

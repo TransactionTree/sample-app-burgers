@@ -1,0 +1,38 @@
+Master:
+  App:
+    Name: ocpx-ncr-burgers-demo
+    Prefix: ocpx-ncr-burgers-demo
+    ReleaseVersion:
+  ImagePullPolicy: Always
+Image:
+  Domain: us.gcr.io
+  Project:
+  PullPolicy: Always
+Scaling:
+  Burgers:
+    Enabled:
+    DefaultReplicas:
+    MinReplicas:
+    MaxReplicas:
+    TargetCpuUtilization:
+    TargetMemoryUtilization:
+Resources:
+  Burgers:
+    MinCpu:
+    MaxCpu:
+    MinMemory:
+    MaxMemory:
+Burgers:
+  SecretKey:
+  NepUsername:
+  NepPassword:
+  NepApplicationKey:
+  NepOrganization:
+  NepSharedKey:
+  HmacSharedKey:
+  HmacSecretKey:
+  CensusApiKey:
+  Locations:
+Ingress:
+  Annotations: {}
+  Burgers: {}

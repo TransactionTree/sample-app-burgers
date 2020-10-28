@@ -1,0 +1,142 @@
+/* Index Page Styles */
+#intro {
+    height: 100%;
+    min-height:100%;
+}
+
+#intro {
+    background: url("../images/indexbg.png")no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+
+.custom-navbar a{
+     margin-right:30px;
+     border-bottom: 2px solid #343a40;
+     font-weight: bold;
+}
+
+.custom-navbar a:hover{
+    border-bottom: 2px solid #7ed957;
+}
+
+.active a{
+    border-bottom: 2px solid #7ed957;
+}
+
+
+a.navbar-brand>img {
+  height: 100%;
+  width: auto;
+}
+
+
+.p-text{
+    color:white;
+
+}
+
+.bg-custom{
+background-color:rgba(0,0,0,.3);
+
+}
+.btn-custom:hover, .btn-custom-round:hover {
+  background-color:#7ed957;
+  color:white
+}
+
+.btn-custom{
+    background-color: #343a40;
+    color:white;
+
+}
+
+.btn-custom-round{
+    border-radius: 15px;
+    background-color: #343a40;
+    color:white;
+}
+hr{
+ border-top: 2px dashed #000000;
+
+}
+
+a{
+    color: #7ed957;
+
+}
+
+a{
+    color: #7ed957;
+}
+
+card-text{
+    padding-right: 5px;
+    padding-left:5px;
+}
+
+body,html{
+    height: 100%;
+
+}
+
+
+.round{
+       border-radius:50%;
+       background: #7ed957;
+    }
+/* Sidebar code and css found from codepen:  https://codepen.io/mouse0270/pen/wEYyqx  Author: Robert McIntosh */
+
+
+.make-me-sticky {
+  position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+  padding: 0 15px;
+}
+
+pre code {
+  background-color: #eee;
+  border: 1px solid #999;
+  display:block;
+  padding: 10px
+  overflow-x : auto;
+  white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-break: keep-all;
+    overflow-wrap: break-word;
+
+}
+
+.just-padding {
+  padding: 15px;
+}
+.list-group.list-group-root {
+  padding: 0;
+  overflow: hidden;
+}
+.list-group.list-group-root .list-group {
+  margin-bottom: 0;
+}
+.list-group.list-group-root .list-group-item {
+  border-radius: 0;
+  border-width: 1px 0 0 0;
+}
+.list-group.list-group-root > .list-group-item:first-child {
+  border-top-width: 0;
+}
+.list-group.list-group-root > .list-group > .list-group-item {
+  padding-left: 30px;
+}
+.list-group.list-group-root > .list-group > .list-group > .list-group-item {
+  padding-left: 45px;
+}
+
+.invalid{
+ border: 3px #7ed957 solid;
+ }
