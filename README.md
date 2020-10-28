@@ -52,7 +52,7 @@ The sample app should open up to the main page. The user can input an address in
 * The payment page is disabled for safety reasons.
 * Users should then navigate to the documentation page to discover what APIs were used and how they were implemented.
 
-## [Notes](#Notes)
+## Notes
  NCR API's used in the NCR Burger Demo are:<br/>
 - Sites
 - Catalog
