@@ -62,5 +62,5 @@ The sample app should open up to the main page. The user can input an address in
 
 If you are using the sample app to learn more about the BSP HMAC algorithm, see the [HMAC](https://burgersdemo.ncrcloud.com/burger/documentation#Authentication_HMAC) section of the documentation within the application and check out the HMACAuth file in the /ncr-burger-demo/code folder.
 
-## [License](#License)
+## License
 This sample app project is released under the Apache 2.0 license. The license's full text can be found [here](https://github.com/NCR-Corporation/sample-app-burgers/blob/main/LICENSE).
