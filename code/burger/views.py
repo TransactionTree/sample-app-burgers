@@ -16,9 +16,7 @@ import json
 
 HIGHLANDS = settings.LOCATIONS['Burgers Unlimited Highlands']
 SOUTHLAND = settings.LOCATIONS['Burgers Unlimited Southland']
-MIDTOWN = settings.LOCATIONS ['Burgers Unlimited Midtown']
-NEP_USERNAME = 'acct:burgers-unlimited@burgers-unlimited-service-account'
-NEP_PASSWORD = 'ncr1sB3st!'
+MIDTOWN = settings.LOCATIONS['Burgers Unlimited Midtown']
 
 
 def index(request):
@@ -35,7 +33,8 @@ def findRestaurant(request):
         return render(request, 'addressNotFound.html')
 
     results = auxMethods.findResturantsInRange(coordinates, radius)
-    context = {'address': address, "radius": radius, 'coordinates': coordinates, 'results': results}
+    context = {'address': address, "radius": radius,
+               'coordinates': coordinates, 'results': results}
 
     return render(request, 'findRestaurant.html', context)
 
@@ -45,7 +44,7 @@ def midtownMenu(request):
         items = catalogMaker.getStoreItems('BurgersUnlimitedMidtown')
         items_prices = catalogMaker.getAllPrices(items, MIDTOWN)
     except:
-        return render(request,'error.html')
+        return render(request, 'error.html')
     context = {'items': items_prices}
 
     return render(request, 'midtownMenu.html', context)
@@ -61,6 +60,7 @@ def southlandMenu(request):
 
     return render(request, 'southlandMenu.html', context)
 
+
 def highlandsMenu(request):
     try:
         items = catalogMaker.getStoreItems('BurgersUnlimitedHighlands')
@@ -71,32 +71,31 @@ def highlandsMenu(request):
 
     return render(request, 'highlandsMenu.html', context)
 
+
 def payment(request):
     return render(request, 'payment.html')
 
+
 def viewCart(request):
-    return render(request,'viewCart.html')
+    return render(request, 'viewCart.html')
 
 
 def confirmation(request):
 
-
     userCart = request.POST.getlist('cart')
 
-    #print(cart)
+    # print(cart)
     print(userCart)
     print(type(userCart))
-    #print(request.body)
+    # print(request.body)
 
     #dict = json.loads(request.POST.get("cart"))
-    #print(dict)
+    # print(dict)
 
+    context = {'cart': userCart}
 
-    context = {'cart':userCart}
-
-    return render(request,'confirmation.html',context)
+    return render(request, 'confirmation.html', context)
 
 
 def documentation(request):
-    return render(request,'documentation.html')
-
+    return render(request, 'documentation.html')
