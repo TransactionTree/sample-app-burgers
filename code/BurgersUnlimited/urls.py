@@ -13,14 +13,16 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path , include
-from django.views.generic import RedirectView
-from django.conf.urls.static import static
-from django.conf import settings
-from django.contrib.auth import views as auth_v
 
-from burger import views
+import debug_toolbar
+
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib import admin
+from django.contrib.auth import views as auth_v
+from django.urls import include, path
+from django.views.generic import RedirectView
+
 from users import views as user_v
 
 
@@ -28,6 +30,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('burger/', include('burger.urls'), name='main-burger'),
     path('', RedirectView.as_view(url='burger/')),
+    path('__debug__/', include(debug_toolbar.urls)),
     path('Register/', user_v.register, name='Register'),
     path('login/', auth_v.LoginView.as_view(template_name='users/login.html'), name='login'),
     path('logout/', auth_v.LogoutView.as_view(template_name='users/logout.html'), name='logout'),

@@ -16,15 +16,17 @@ In future updates, we hope to capture the API calls made by the server visually,
 ## Installation
 You will need to have the following:
 1. Python 3.0 version or [higher](https://www.python.org/downloads/).
-2. A Python IDE, we chose [Pycharm](https://www.jetbrains.com/pycharm/download/#section=mac).
+2. A Python IDE/CE, we chose [PyCharm](https://www.jetbrains.com/pycharm/download/#section=mac).
 3. Django latest version.
-   * Open Pycharm terminal and type ```$ python3 -m pip install Django```
-4. Python Requests Library
-   * Open Pycharm terminal and type ```$ python3 -m install requests```
-5. Crispy Forms
-   * Open Pycharm terminal and type ```$ pip install django-crispy-forms```
-6. Django Rest Framework
-   * Open Pycharm terminal and type ```$ pip -m install djangorestframework```
+   * Open PyCharm terminal and type ```$ python3 -m pip install Django```
+4. Python Requests module.
+   * Open PyCharm terminal and type ```$ python3 -m pip install requests```
+5. Django packages. Run the following Terminal commands in PyCharm.
+   * [Django Compressor](https://django-compressor.readthedocs.io/en/stable/) ```$ python3 -m pip install django_compressor```
+   * [Django Debug Toolbar](https://django-debug-toolbar.readthedocs.io/en/latest/) ```$ python3 -m pip install django-debug-toolbar```
+   * [Django REST framework](https://www.django-rest-framework.org/) ```$ python3 -m pip install djangorestframework```
+   * [django-crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/) ```$ python3 -m pip install django-crispy-forms```
+   * [django-web-profiler](https://github.com/MicroPyramid/django-web-profiler) ```$ python3 -m pip install django-web-profiler```
    
 ## Setting up the Developer Environment   
  
