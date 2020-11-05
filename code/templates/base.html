@@ -79,10 +79,14 @@
         var toolBarD = document.getElementById("djShowToolBarD")
         var toolBarJ = document.getElementById("djShowToolBarJ")
         var toolBarButton = document.getElementById("djShowToolBarButton")
-        toolBarD.setAttribute('style', 'display:none;')
-        toolBarJ.setAttribute('style', 'display:none;')
-        toolBarButton.setAttribute('style', 'font-size:18px;')
-        toolBarButton.innerHTML = "Profiler"
+        if (toolBarD && toolBarJ) {
+            toolBarD.setAttribute('style', 'display:none;')
+            toolBarJ.setAttribute('style', 'display:none;')
+        }
+        if (toolBarButton) {
+            toolBarButton.setAttribute('style', 'font-size:18px;')
+            toolBarButton.innerHTML = "Profiler"
+        }
     })
 </script>
 

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'compressor',
     'debug_toolbar',
     'django_web_profiler',
+    'requests_panel',
 ]
 
 MIDDLEWARE = [
@@ -167,6 +168,14 @@ LOGGING = {
 }
 
 INTERNAL_IPS = ('127.0.0.1',)
+
+DEBUG_TOOLBAR_CONFIG = {
+    'DISABLE_PANELS': {'debug_toolbar.panels.sql.SQLPanel'}
+}
+DEBUG_TOOLBAR_PANELS = ['requests_panel.panel.RequestsDebugPanel',
+                        'debug_toolbar.panels.timer.TimerPanel',
+                        'debug_toolbar.panels.settings.SettingsPanel',
+                        ]
 
 #DO NOT COMMIT THESE VALUES
 NEP_USERNAME = ''
