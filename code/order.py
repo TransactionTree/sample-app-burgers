@@ -70,3 +70,6 @@ def getOrders():
     res = requests.post(url, payload, auth=(HMACAuth()))
     result = res.json()
     print(result)
+
+
+getOrders()

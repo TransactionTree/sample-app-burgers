@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'burger',
-    'users.apps.UsersConfig',
-    'crispy_forms',
+
+
 ]
 
 MIDDLEWARE = [
@@ -130,9 +130,9 @@ NEP_PASSWORD = ''
 NEP_APPLICATION_KEY = ''
 NEP_ORGANIZATION = ''
 NEP_SHARED_KEY = ''
+CENSUS_API_KEY = ''
 HMAC_SHARED_KEY = ''
 HMAC_SECRET_KEY = ''
-CENSUS_API_KEY = ''
 
 # Locations of the resturants saved in a id, site name pattern
 LOCATIONS = {}

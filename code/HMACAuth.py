@@ -8,9 +8,11 @@ import requests
 from _datetime import timezone
 
 from BurgersUnlimited.settings import *
+#from BurgersUnlimited import settings
 
 
 class HMACAuth(requests.auth.AuthBase):
+
 
     def __init__(self, enterprise_unit='0'):
         """

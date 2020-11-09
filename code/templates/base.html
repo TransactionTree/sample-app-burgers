@@ -32,18 +32,7 @@
            <li class="nav-item  ">
                <a class="nav-link" href="{% url 'documentation' %}">Documentation</a>
            </li>
-           {% if user.is_authenticated %}
-                <li class="nav-item h-100">
-                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-                </li>
-           {% else %}
-                <li class="nav-item h-100">
-                    <a class="nav-link" href="{% url 'login' %}">Login</a>
-                </li>
-           <li class="nav-item h-100">
-               <a class="nav-link" href="{% url 'Register' %}">Register</a>
-           </li>
-           {% endif %}
+
            <li class="nav-item h-100">
             <a class="nav-link" href="{% url 'viewCart' %}"> <i class="fa fa-shopping-cart fa-lg" style="color:#ffffff;"></i></a>
 

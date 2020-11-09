@@ -199,3 +199,4 @@ def addChange(string):
     return string
 
 
+print(getStoreItems("BurgersUnlimitedMidtown"))
