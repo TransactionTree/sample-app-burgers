@@ -40,6 +40,10 @@ INSTALLED_APPS = [
     'burger',
     'users.apps.UsersConfig',
     'crispy_forms',
+    'compressor',
+    'debug_toolbar',
+    'django_web_profiler',
+    'requests_panel',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_web_profiler.middleware.DebugLoggingMiddleware',
 ]
 
 ROOT_URLCONF = 'BurgersUnlimited.urls'
@@ -117,12 +122,60 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATICFILES_DIRS = [STATIC_DIR]
 STATIC_URL ='/static/'
+
+# Logging
+# https://docs.djangoproject.com/en/3.1/topics/logging/
+
+URLS = ['http://stage.testsite.com/', 'http://stage.testsite.com/testing/']
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
+    },
+    'formatters': {
+        'standard': {
+            'format' : "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s",
+        },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+        'file_log': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': BASE_DIR + '/logs/profiler.log',
+            'backupCount': 5,
+            'formatter': 'standard',
+        }
+    },
+    'loggers': {
+        'request-logging': {
+            'level': 'DEBUG',
+            'handlers': ['console', 'file_log'],
+            'propagate': False,
+        },
+    }
+}
+
+INTERNAL_IPS = ('127.0.0.1',)
+
+DEBUG_TOOLBAR_CONFIG = {
+    'DISABLE_PANELS': {'debug_toolbar.panels.sql.SQLPanel'}
+}
+DEBUG_TOOLBAR_PANELS = ['requests_panel.panel.RequestsDebugPanel',
+                        'debug_toolbar.panels.timer.TimerPanel',
+                        'debug_toolbar.panels.settings.SettingsPanel',
+                        ]
 
 #DO NOT COMMIT THESE VALUES
 NEP_USERNAME = ''
