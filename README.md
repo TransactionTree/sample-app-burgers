@@ -44,6 +44,7 @@ Once you have completed the installation and configuration of the developer envi
 To run the sample app, enter the following commands from the root directory in Terminal:
 ```bash
 $ cd code
+$ pip install -r requirements.txt
 $ python3 manage.py migrate
 $ python3 manage.py runserver
 ```
