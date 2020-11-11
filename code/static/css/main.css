@@ -184,6 +184,11 @@ body, html {
   display: none;
 }
 
+.about-image {
+  margin: 1rem auto;
+  display: block;
+}
+
 /* Sidebar Styles */
 
 .sidebar {
