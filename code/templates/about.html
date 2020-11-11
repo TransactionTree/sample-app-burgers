@@ -80,7 +80,7 @@
                     group of a sites. For example, The name of a group of sites. NCR-burgers might be the NEP-Organization,
                     but there are three sites within the organization. Burgers Unlimited Southland, Burgers Unlimited Midtown,
                     and Burgers Unlimited Highlands.</p>
-                <p><b>DevEx</b> - Shorthand for the Developer Experience portal. It can be found <a href="https://developer.ncr.com/" style="font-weight: 600;">here</a>.
+                <p><b>DevEx</b> - Shorthand for the Developer Experience portal. It can be found <a href="https://developer.ncr.com/">here</a>.
                     It is the main resource for learning more about the various APIs available to you.</p>
                 <p><b>Payload</b> - A command variable name for a formatted string containing relevant information. Payloads
                     within BSP generally have a specific format that your strings must adhere to or your request will be denied</p>
@@ -249,7 +249,7 @@
                 The site is the heart of the DevEx portal, the majority of the API calls within DevEx utilize a site.
                 The first thing you should do is set up a site for your organization. You can have any number of sites,
                 but you should at least create one. To create a site, you must utilize the Site API call. The documentation
-                for the Site API can be found <a href="https://developer.ncr.com/portals/dev-portal/api-explorer/details/15/documentation?version=1.99&path=post_sites_import" style="font-weight:600">here</a>.
+                for the Site API can be found <a href="https://developer.ncr.com/portals/dev-portal/api-explorer/details/15/documentation?version=1.99&path=post_sites_import">here</a>.
 
             <p>Here is an example of creating a site using Python:</p>
 <!-- These code blocks have to go all the way to the edge. PLEASE DONT CHANGE THESE -->
@@ -491,7 +491,7 @@
 
                 <h4 class="sub-section-header" id="Tutorial_Catalog">Catalog</h4>
                 <p>Now that we have given our restaurants a location, let’s talk about how to create a menu. To create a menu we will be
-                    utilizing the catalog API found <a href="https://developer.ncr.com/portals/dev-portal/api-explorer/details/8/documentation?version=2.99" style="font-weight:600">here</a>.
+                    utilizing the catalog API found <a href="https://developer.ncr.com/portals/dev-portal/api-explorer/details/8/documentation?version=2.99">here</a>.
                     The Catalog API views items and item components separately. The item is the base component.
                     Once an item is created, you can mix and match the other components (details, custom-modifiers, groupings, prices, and link-groups)
                     depending on your business need. We are going to create items with price components to build our menu. Here is a function that creates an item:
@@ -575,7 +575,7 @@
                     <p>The final API we used was the order API. We used the order API to create an order from the items within a user's
                         shopping cart, keep track of those items, and "push" the order into the universe when the user checked out.
                         We don't have a real restaurant or delivery business, so just imagine that part. More information can be
-                        found about the order API  <a href="https://developer.ncr.com/portals/dev-portal/api-explorer/details/9/documentation?version=3.99)" style="font-weight:600">here</a>.</p>
+                        found about the order API  <a href="https://developer.ncr.com/portals/dev-portal/api-explorer/details/9/documentation?version=3.99)">here</a>.</p>
                      <p>We grabbed our shopping cart and parsed the relevant values out of it. We then took those values and placed
                          them into the payload of the createOrder API  call. Then the order was pushed into the universe! However,
                          the order can we created at any stage. You can create an order at the beginning of the user experience
@@ -603,7 +603,7 @@
                       that best fits your organization's needs and the intended users of your products. This sample app uses HMAC/Access Key authentication,
                       which is discussed in further detail in the section below.
                       For more information about how to use the other authentication styles, head over to the Authentication section in
-                    <a href="https://developer.ncr.com/portals/dev-portal/help-center/documentation/66">NCR API Platform Basics: Using Services</a>
+                    <a href="https://developer.ncr.com/portals/dev-portal/help-center/documentation/66">NCR API Platform Basics: Using Services</a>.
                   </p>
                 <h4 class="sub-section-header" id="Authentication_HMAC">HMAC</h4>
                   <p>
@@ -629,7 +629,7 @@ nep-application-key: 8a808f0d515f1f1001515f1fdc010002
                 <h4 class="sub-section-header" id="Authentication_Implementation">Implementation</h4>
                   <p>
                     In each request, the credentials contain the user’s shared key and a HMAC generated from the user’s secret key. The general algorithm for 
-                    generating the HMAC is as follows (see pseudocode <a href="https://developer.ncr.com/portals/dev-portal/help-center/documentation/66" style="font-weight:600">here</a>):
+                    generating the HMAC is as follows (see pseudocode <a href="https://developer.ncr.com/portals/dev-portal/help-center/documentation/66">here</a>):
                   </p>
  <!-- These code blocks have to go all the way to the edge. PLEASE DONT CHANGE THESE -->
 <pre><code>1. Get the native <span style="color:blue">DATE</span> value from the request’s HTTP headers
@@ -791,12 +791,12 @@ nep-application-key: 8a808f0d515f1f1001515f1fdc010002
             <div class="about-section about-section-hidden" id="Resources">
                 <h2 class="section-header">Resources</h2>
                 <p>
-                    <a href="https://requests.kennethreitz.org/en/master/user/quickstart/" style="color:#31A7E5">Python Requests Library</a><br>
-                    <a href="https://developer.ncr.com/portals/dev-portal/api-explorer" style="color:#31A7E5">DevEx Portal</a><br>
+                    <a href="https://requests.kennethreitz.org/en/master/user/quickstart/">Python Requests Library</a><br>
+                    <a href="https://developer.ncr.com/portals/dev-portal/api-explorer">DevEx Portal</a><br>
                     <a href="https://developer.ncr.com/portals/dev-portal/api-explorer/details/15/documentation?version=1.99" style="color:#31A7E5;">BSP Sites API</a><br>
-                    <a href="https://developer.ncr.com/portals/dev-portal/api-explorer/details/8/documentation?version=2.99" style="color:#31A7E5">BSP Catalog API</a><br>
-                    <a href="https://developer.ncr.com/portals/dev-portal/api-explorer/details/9/documentation?version=3.99" style="color:#31A7E5">BSP Order API</a><br>
-                    <a href="https://developer.ncr.com/portals/dev-portal/help-center/documentation/66" style="color:#31A7E5">Authentication</a>
+                    <a href="https://developer.ncr.com/portals/dev-portal/api-explorer/details/8/documentation?version=2.99">BSP Catalog API</a><br>
+                    <a href="https://developer.ncr.com/portals/dev-portal/api-explorer/details/9/documentation?version=3.99">BSP Order API</a><br>
+                    <a href="https://developer.ncr.com/portals/dev-portal/help-center/documentation/66">Authentication</a>
                 </p>
                 <input type=button class="btn-about-link-secondary" onclick="parent.open('https://github.com/NCR-Corporation/sample-app-burgers')" value="Go to GitHub">
                 <div class="nav-btn-container-long">

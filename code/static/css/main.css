@@ -59,7 +59,6 @@ a.navbar-brand > img {
 }
 
 .btn-about {
-  margin: 0 2rem;
   padding: 10px 18px 10px 18px;
   border: 1px solid #31a7e5;
   border-radius: 4px;
@@ -68,13 +67,14 @@ a.navbar-brand > img {
   color: #0279b3;
 }
 
-.btn-about:hover {
+.btn-about:hover, .btn-about-link:hover {
   border-color: #31a7e5;
   background-color: #31a7e5;
   color: white;
 }
 
 .btn-about-secondary {
+  margin-left: 2rem;
   padding: 10px 18px 10px 18px;
   border: 1px solid #31a7e5;
   border-radius: 4px;
@@ -82,7 +82,7 @@ a.navbar-brand > img {
   color: white;
 }
 
-.btn-about-secondary:hover {
+.btn-about-secondary:hover, .btn-about-link-secondary:hover {
   border-color: #2e99d3;
   background-color: #2e99d3;
   color: white;
@@ -109,7 +109,7 @@ a.navbar-brand > img {
 }
 
 .nav-btn-container {
-  margin-top: 16rem;
+  margin-top: 18rem;
   display: flex;
   justify-content: flex-end;
 }
@@ -120,7 +120,7 @@ a.navbar-brand > img {
 }
 
 .nav-btn-container-long {
-    margin-top: 26rem;
+    margin-top: 28rem;
     display: flex;
     justify-content: flex-end;
 }
@@ -133,15 +133,17 @@ hr {
 
 a {
   font-weight: normal;
-  color: #7ed957;
+  color: #31a7e5;
 }
 
 a:link {
   text-decoration: none;
+  color: #31a7e5;
 }
 
 a:hover {
-  font-weight: bold;
+  font-weight: 600;
+  color: #31a7e5;
 }
 
 .section-header {
