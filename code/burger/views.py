@@ -97,5 +97,5 @@ def confirmation(request):
     return render(request, 'confirmation.html', context)
 
 
-def documentation(request):
-    return render(request, 'documentation.html')
+def about(request):
+    return render(request, 'about.html')

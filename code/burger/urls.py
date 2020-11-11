@@ -11,5 +11,5 @@ path('highlandsMenu',views.highlandsMenu,name='highlandsMenu'),
 path('payment/', views.payment, name='payment'),
 path('viewCart', views.viewCart, name='viewCart'),
 path('confirmation',views.confirmation, name='confirmation'),
-path('documentation', views.documentation,name='documentation'),
+path('about', views.about, name='about'),
 ]

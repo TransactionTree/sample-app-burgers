@@ -1,97 +1,98 @@
 {% extends 'base.html' %}
-{% block title %}<title>Documentation</title> {% endblock %}
+
+{% block title %}<title>About</title>{% endblock %}
+
 {% block content %}
 
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<script src="{% static 'js/about.js' %}" type="text/javascript"></script>
 
 <div class="container-fluid">
     <div class="row flex-xl-nowrap">
-        <div class="col-md-3 col-xl-2 just padding">
-            <div class="list-group list-group-root well make-me-sticky sidebar">
-            <br>
-            <h4>Table of Contents</h4>
 
-                <ul class=" list-group">
-                    <li class="list-group-item" style="border:none">
-                        <a href="#Getting_Started" >Getting Started</a>
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <div class="list-group list-group-root well make-me-sticky sidebar">
+                <h4 class="sidebar-h4">Sample App</h4>
+                <ul class="list">
+                    <li class="list-section">
+                        <a href="#" class="list-section-item sidebar-item-current" id="li-getting-started" onclick="onClickSidebarItem(this.id, 'Getting_Started')">Getting Started</a>
                     </li>
-                   <!-- <li class="list-group-item">
-                        <a href="#Installtion">Installation</a>
-                    </li> -->
-                    <li class="list-group-item">
-                        <a href="#Glossary">Glossary</a>
+                    <li class="list-section">
+                        <a href="#" class="list-section-item" id="li-glossary" onclick="onClickSidebarItem(this.id, 'Glossary')">Glossary</a>
                     </li>
-                    <li class="list-group-item">
-                        <a href="#Quick_Start">Quick Start</a>
-                        <a href="#Sites_Quick_Start" class="list-group-item" style="border:none; padding-bottom:0px;">Sites</a>
+                    <li class="list-section">
+                        <a href="#" class="list-section-item" id="li-quick-start" onclick="onClickSidebarItem(this.id, 'Quick_Start')">Quick Start</a>
+                        <a href="#Sites_Quick_Start" class="list-section-item" id="li-quick-start-sites" onclick="onClickSidebarItem('li-quick-start', 'Quick_Start')">Sites</a>
                     </li>
-                    <li class="list-group-item">
-                        <a href="#Tutorial">Tutorial</a>
-                        <a href="#Tutorial_Sites" class="list-group-item" style="border:none; padding-bottom:0px;">Sites</a>
-                        <a href="#Tutorial_Catalog" class="list-group-item" style="border:none; padding-bottom:0px;">Catalog</a>
-                        <a href="#Tutorial_Order" class="list-group-item" style="border:none; padding-bottom:0px;">Order</a>
+                    <li class="list-section">
+                        <a href="#" class="list-section-item" id="li-tutorial" onclick="onClickSidebarItem(this.id, 'Tutorial')">Tutorial</a>
+                        <a href="#Tutorial_Sites" class="list-section-item" id="li-tutorial-sites" onclick="onClickSidebarItem('li-tutorial', 'Tutorial')">Sites</a>
+                        <a href="#Tutorial_Catalog" class="list-section-item" id="li-tutorial-catalog" onclick="onClickSidebarItem('li-tutorial', 'Tutorial')">Catalog</a>
+                        <a href="#Tutorial_Order" class="list-section-item" id="li-tutorial-order" onclick="onClickSidebarItem('li-tutorial', 'Tutorial')">Order</a>
                     </li>
-                    <li class="list-group-item">
-                        <a href="#Authentication">Authentication</a>
-                        <a href="#Authentication_HMAC" class="list-group-item" style="border:none; padding-bottom:0px;">HMAC</a>
-                        <a href="#Authentication_Implementation" class="list-group-item" style="border:none; padding-bottom:0px;">Implementation</a>
-                        <a href="#Authentication_Advantages" class="list-group-item" style="border:none; padding-bottom:0px;">Advantages</a>
+                    <li class="list-section">
+                        <a href="#" class="list-section-item" id="li-authentication" onclick="onClickSidebarItem(this.id, 'Authentication')">Authentication</a>
+                        <a href="#Authentication_HMAC" class="list-section-item" id="li-authentication-hmac" onclick="onClickSidebarItem('li-authentication', 'Authentication')">HMAC</a>
+                        <a href="#Authentication_Implementation" class="list-section-item" id="li-authentication-implementation" onclick="onClickSidebarItem('li-authentication', 'Authentication')">Implementation</a>
+                        <a href="#Authentication_Advantages"  class="list-section-item" id="li-authentication-advantages" onclick="onClickSidebarItem('li-authentication', 'Authentication')">Advantages</a>
                     </li>
-                    <li class="list-group-item">
-                        <a href="#Resources">Resources</a>
+                    <li class="list-section">
+                        <a href="#" class="list-section-item" id="li-resources" onclick="onClickSidebarItem(this.id, 'Resources')">Resources</a>
                     </li>
                 </ul>
             </div>
         </div>
 
-
         <main class="col-md-9 col-xl-9 py-md-3 pl-md-5" role="main">
-            <div id="Getting_Started">
-                <br>
-                <h2>Getting Started</h2>
 
+            <!-- GETTING STARTED -->
+            <div class="about-section" id="Getting_Started">
+                <h2 class="section-header">Getting Started</h2>
                 <p>Getting started with NCR BSP APIs can be challenging when you first begin.
                 This demo serves as an example as to how you can incorporate NCR BSP APIs in your application.
                 This is a mock of a burger startup called NCR Burgers Unlimited. It is a Django/Bootstrap application.
                 We have used Python to make the requests to NCR BSP API. All of the code snippets for this tutorial will
                 be in Python. You can find relevant code snippets for other languages on the individual API pages.
-                </p></div>
-
-          <!--  <div id="Installation">
-                <h2>Installation</h2>
-                <p>
-
                 </p>
-            </div> -->
+                <input type=button class="btn-about-link" onClick="parent.open('https://github.com/NCR-Corporation/sample-app-burgers')" value="Go to GitHub">
+                <img src="{% static 'images/getting-started.png' %}" height="500rem" style="display: block; margin: 1rem auto 0.5rem auto;">
+                <div class="nav-btn-container-tight">
+                    <input type=button class="btn-about-secondary" onclick="onClickNavButton('li-glossary', 'Glossary')" value="Up Next: Glossary">
+                </div>
+            </div>
 
-            <div id="Glossary">
-                <h2>Glossary</h2>
-                <p>
+            <!-- GLOSSARY -->
+            <div class="about-section about-section-hidden" id="Glossary">
+                <h2 class="section-header">Glossary</h2>
                 <p><b>Application Programming Interface (API)</b> - A piece of code is structured in such a way that allows
-                other programs to use it without exposing the original code it was a part of. You can consider an API as a waiter.
-                The API will bring you your order; you have no idea how the order was made.</p>
+                    other programs to use it without exposing the original code it was a part of. You can consider an API as a waiter.
+                    The API will bring you your order; you have no idea how the order was made.</p>
                 <p><b>Site</b> - A site can be considered a physical location within the cloud. A site can be a restaurant,
                     retail store, a warehouse, etc. This is the heart of the NCR BSP architecture. The site will be linked to
                     many of the API calls that you make.</p>
-
                 <p><b>SiteId</b> - A unique id generated by the siteAPI. This id is necessary for calls that depend on
                     specific locations. Example: Retrieve the menu of XYZ location. XYZ location has a unique SiteId. </p>
-
                 <p><b>NEP-Correlation-ID</b> - A unique debugging id (user-generated) to help map errors.</p>
-
                 <p><b>NEP-Organization</b> - The top level organization that holds the information that is unique to a
                     group of a sites. For example, The name of a group of sites. NCR-burgers might be the NEP-Organization,
                     but there are three sites within the organization. Burgers Unlimited Southland, Burgers Unlimited Midtown,
                     and Burgers Unlimited Highlands.</p>
-
-                <p><b>DevEx</b> - Short hand for the Developer Experience portal. It can be found <a href="https://developer.ncr.com/">here</a>.
+                <p><b>DevEx</b> - Shorthand for the Developer Experience portal. It can be found <a href="https://developer.ncr.com/" style="font-weight: 600;">here</a>.
                     It is the main resource for learning more about the various APIs available to you.</p>
-
                 <p><b>Payload</b> - A command variable name for a formatted string containing relevant information. Payloads
                     within BSP generally have a specific format that your strings must adhere to or your request will be denied</p>
+                <div class="nav-btn-container">
+                    <input type=button class="btn-about" onclick="onClickNavButton('li-getting-started', 'Getting_Started')" value="Back">
+                    <input type=button class="btn-about-secondary" onclick="onClickNavButton('li-quick-start', 'Quick_Start')" value="Up Next: Quick Start">
+                </div>
             </div>
 
-            <div id="Quick_Start">
-                <h2>Quick Start</h2>
+            <!-- QUICK START -->
+            <div class="about-section about-section-hidden" id="Quick_Start">
+                <h2 class="section-header">Quick Start</h2>
                 <p> This section assumes that you already have an application built, have obtained your API Key, and have familiarity with writing API requests.
                     Before you begin, please make sure that your credentials are valid and are working. A test api request has been set up for you.<br>
 
@@ -243,12 +244,12 @@
 </div>
 <br>
         <div id="Sites_Quick_Start">
-            <h4>Sites</h4>
+            <h4 class="sub-section-header" id="Quick_Start_Sites">Sites</h4>
             <p>
                 The site is the heart of the DevEx portal, the majority of the API calls within DevEx utilize a site.
                 The first thing you should do is set up a site for your organization. You can have any number of sites,
                 but you should at least create one. To create a site, you must utilize the Site API call. The documentation
-                for the Site API can be found <a href="https://developer.ncr.com/portals/dev-portal/api-explorer/details/15/documentation?version=1.99&path=post_sites_import">here</a>.
+                for the Site API can be found <a href="https://developer.ncr.com/portals/dev-portal/api-explorer/details/15/documentation?version=1.99&path=post_sites_import" style="font-weight:600">here</a>.
 
             <p>Here is an example of creating a site using Python:</p>
 <!-- These code blocks have to go all the way to the edge. PLEASE DONT CHANGE THESE -->
@@ -376,25 +377,27 @@
 
             <p>Now that you have created your site, you can start using majority of the APIs within DevEx portal. Most of the APIs have documentation to go along with them,
                 if you would like a more depth look at some of the APIs keep reading. We are going to use some of the APIs to help create a burger startup. </p>
+            <div class="nav-btn-container">
+                <input type=button class="btn-about" onclick="onClickNavButton('li-glossary', 'Glossary')" value="Back">
+                <input type=button class="btn-about-secondary" onclick="onClickNavButton('li-tutorial', 'Tutorial')" value="Up Next: Tutorial">
+            </div>
         </div>
             </div>
 
-            <p id="Tutorial">
-                <h2>Tutorial</h2>
-
+            <!-- TUTORIAL -->
+            <div class="about-section about-section-hidden" id="Tutorial">
+                <h2 class="section-header">Tutorial</h2>
                 <p>
                 This next section is going to cover how to use a select few APIs in a real life applications. We are going to walk through the usage from site creation to more
                 advanced calls such as making a catalog and creating orders. Let’s begin.
                 </p>
 
-                 <h4 id="Tutorial_Sites">Sites</h4>
-
-
+                <h4 class="sub-section-header" id="Tutorial_Sites">Sites</h4>
                 <p>We are going to use the DevEx APIs to help us create a fake burger chain. Let's call our burger startup NCR Burgers Unlimited Demo or just
                     NCR Burgers for short. The first thing we are going to do is create a site for our booming burger business. We are actually going to make three.
                     We will have a Midtown location, a Highlands location and a Southland location. We are going to use the same functions from above
                     (the create, query and update). We can then use the find-by-Criteria site call to pull down all our locations. Here is a function to help you pull
-                    all the locations once you create them.
+                    all the locations once you create them. </p>
 
 <pre><code> <span style="color:orange">import</span> requests
 
@@ -486,13 +489,14 @@
             restaurants and perform some calculations on how far each restaurant is from the given address. Your desired outcome will
             determine which APIs you will need to use. </p>
 
-                <h4 id="Tutorial_Catalog">Catalog</h4>
+                <h4 class="sub-section-header" id="Tutorial_Catalog">Catalog</h4>
                 <p>Now that we have given our restaurants a location, let’s talk about how to create a menu. To create a menu we will be
-                    utilizing the catalog API found <a href="https://developer.ncr.com/portals/dev-portal/api-explorer/details/8/documentation?version=2.99">here</a>.
+                    utilizing the catalog API found <a href="https://developer.ncr.com/portals/dev-portal/api-explorer/details/8/documentation?version=2.99" style="font-weight:600">here</a>.
                     The Catalog API views items and item components separately. The item is the base component.
                     Once an item is created, you can mix and match the other components (details, custom-modifiers, groupings, prices, and link-groups)
                     depending on your business need. We are going to create items with price components to build our menu. Here is a function that creates an item:
                 </p>
+
 <pre><code><span style="color:grey"> # The department field is not a required field. It is a field necessary for the frontend implementation of this app.</span>
  <span style="color:orange">import</span> requests
 
@@ -567,26 +571,33 @@
         add the itemName and itemPrice into a single object or dict</code></pre>
             <p>Once we have our itemName and itemPrices connected, we can do anything with that information. We passed the information
                 to the front end and used that to create the menu for the Highland, Southland, and Midtown locations.</p>
-                <h4 id="Tutorial_Order">Order</h4>
+                <h4 class="sub-section-header" id="Tutorial_Order">Order</h4>
                     <p>The final API we used was the order API. We used the order API to create an order from the items within a user's
                         shopping cart, keep track of those items, and "push" the order into the universe when the user checked out.
                         We don't have a real restaurant or delivery business, so just imagine that part. More information can be
-                        found about the order API  <a href="https://developer.ncr.com/portals/dev-portal/api-explorer/details/9/documentation?version=3.99)">here</a>.</p>
+                        found about the order API  <a href="https://developer.ncr.com/portals/dev-portal/api-explorer/details/9/documentation?version=3.99)" style="font-weight:600">here</a>.</p>
                      <p>We grabbed our shopping cart and parsed the relevant values out of it. We then took those values and placed
                          them into the payload of the createOrder API  call. Then the order was pushed into the universe! However,
                          the order can we created at any stage. You can create an order at the beginning of the user experience
                          or at the end when the customer is checking out. It's up to you.</p>
             <p>Here is some pseudo-code creating an order:</p>
 <pre><code> for each item in Shopping Cart:
-    parse relevant informaation
+    parse relevant information
     place relevant information inside of order payload
 
  make request using modified payload</code></pre>
             <p>That concludes the tutorial portion of this documentation. However, there are many more APIs covered than the ones that were explained;
                 and the APIs described have more function calls than the ones used in this demo. Check out the <a href="https://developer.ncr.com/portals/dev-portal/api-explorer">DevEx</a>
                 portal to learn more.</p>
-            <div id="Authentication">
-                <h2>Authentication</h2>
+            <div class="nav-btn-container">
+                <input type=button class="btn-about" onclick="onClickNavButton('li-quick-start', 'Quick_Start')" value="Back">
+                <input type=button class="btn-about-secondary" onclick="onClickNavButton('li-authentication', 'Authentication')" value="Up Next: Authentication">
+            </div>
+            </div>
+
+            <!-- AUTHENTICATION -->
+            <div class="about-section about-section-hidden" id="Authentication">
+                <h2 class="section-header">Authentication</h2>
                   <p>
                     The APIs within BSP support Access Key (HMAC) and Access Token authentication methods. You should choose the authentication style
                       that best fits your organization's needs and the intended users of your products. This sample app uses HMAC/Access Key authentication,
@@ -594,7 +605,7 @@
                       For more information about how to use the other authentication styles, head over to the Authentication section in
                     <a href="https://developer.ncr.com/portals/dev-portal/help-center/documentation/66">NCR API Platform Basics: Using Services</a>
                   </p>
-                <h4 id="Authentication_HMAC">HMAC</h4>
+                <h4 class="sub-section-header" id="Authentication_HMAC">HMAC</h4>
                   <p>
                     Access key authentication uses a hash-based message authentication code (HMAC) to uniquely sign a single HTTP request.
                     This authentication method is intended for non-interactive users, e.g., technical users, involved in software-to-software
@@ -615,10 +626,10 @@ nep-application-key: 8a808f0d515f1f1001515f1fdc010002
                   <p>The scheme used in the 'Authorization' header is 'AccessKey', and the credentials portion of the header consists of the following parts:</p>
 <pre><code>&ltshared-key&gt:&lthmac&gt
 </code></pre>
-                <h4 id="Authentication_Implementation">Implementation</h4>
+                <h4 class="sub-section-header" id="Authentication_Implementation">Implementation</h4>
                   <p>
                     In each request, the credentials contain the user’s shared key and a HMAC generated from the user’s secret key. The general algorithm for 
-                    generating the HMAC is as follows (see pseudocode <a href="https://developer.ncr.com/portals/dev-portal/help-center/documentation/66">here</a>):
+                    generating the HMAC is as follows (see pseudocode <a href="https://developer.ncr.com/portals/dev-portal/help-center/documentation/66" style="font-weight:600">here</a>):
                   </p>
  <!-- These code blocks have to go all the way to the edge. PLEASE DONT CHANGE THESE -->
 <pre><code>1. Get the native <span style="color:blue">DATE</span> value from the request’s HTTP headers
@@ -630,8 +641,8 @@ nep-application-key: 8a808f0d515f1f1001515f1fdc010002
 7. Return the following concatenated string as the output: <span style="color:magenta">{sharedKey + ':' + encodedHMAC}</span>
 </code></pre>
                   <p>
-                    <b>Note</b>: A string is generated containing data from the request that will be used to generate a signature. 
-                    When passed to the HMAC calculation, the string’s bytes should be encoded in UTF-8. 
+                    <b>Note</b>: A string is generated containing data from the request that will be used to generate a signature.
+                    When passed to the HMAC calculation, the string’s bytes should be encoded in UTF-8.
                     The following data is added to the sign-able content (in required order, delimited by a '\n' character):
                   </p>
                   <ul>
@@ -642,9 +653,9 @@ nep-application-key: 8a808f0d515f1f1001515f1fdc010002
                     <li>nep-application-key header value (if specified in request)</li>
                     <li>ep-correlation-id header value (if specified in request)</li>
                     <li>nep-organization header value (if specified in request)</li>
-                    <li>nep-service-version header value (if specified in request)</li>  
-                  </ul> 
-                <h4 id="#Authentication_Advantages">Advantages</h4>
+                    <li>nep-service-version header value (if specified in request)</li>
+                  </ul>
+                <h4 class="sub-section-header" id="Authentication_Advantages">Advantages</h4>
                   <ul>
                     <li>Allows maintenance of a single platform identity with multiple credentials expressed in the form of access keys (e.g., using one identity per application).</li>
                     <li>Individual access keys can be disabled or deleted without affecting other keys or the identity itself.</li>
@@ -652,7 +663,6 @@ nep-application-key: 8a808f0d515f1f1001515f1fdc010002
                     <li>Guarantees authenticity of the full request instead of a specific part of the request (e.g., Authorization header).</li>
                     <li>Actual user secrets are never transmitted over the wire, as each request has a unique HMAC.</li>
                   </ul>
-
                 Here is  the HMACAuth class and function used through the app:<br>
                 <em>(This is an example. This code snippet will not work without the correct environment and credentials.)</em><br><br>
 <pre><code><span style="color:orange"> import</span> base64
@@ -662,7 +672,7 @@ nep-application-key: 8a808f0d515f1f1001515f1fdc010002
 <span style="color:orange"> from</span> urllib.parse <span style="color:orange">import</span> urlparse
 <span style="color:orange"> import</span> requests
 <span style="color:orange"> from</span> _datetime <span style="color:orange">import</span> timezone
-<span style="color:orange"> from </span>BurgersUnlimited.settings <span style="color:orange">import </span> *
+<span style="color:orange"> from </span>BurgersUnlimited.settings <span style="color:orange">import</span> *
 
 <span style="color:orange"> class</span> HMACAuth(requests.auth.AuthBase):
 
@@ -771,26 +781,32 @@ nep-application-key: 8a808f0d515f1f1001515f1fdc010002
        # Add the signature to the HTTP authorization header
        request.headers[<span style="color:green">'Authorization'</span>] = <span style="color:green">"AccessKey </span>" + accessKey
 </code></pre>
+                <div class="nav-btn-container">
+                    <input type=button class="btn-about" onclick="onClickNavButton('li-tutorial', 'Tutorial')" value="Back">
+                    <input type=button class="btn-about-secondary" onclick="onClickNavButton('li-resources', 'Resources')" value="Up Next: Resources">
+                </div>
+            </div>
 
-            </div>
-            <div id="Resources">
-                <h2>Resources</h2>
+            <!-- RESOURCES -->
+            <div class="about-section about-section-hidden" id="Resources">
+                <h2 class="section-header">Resources</h2>
                 <p>
-                    <a href="https://requests.kennethreitz.org/en/master/user/quickstart/">Python Requests Library</a><br>
-                    <a href="https://developer.ncr.com/portals/dev-portal/api-explorer">DevEx Portal</a><br>
-                    <a href="https://developer.ncr.com/portals/dev-portal/api-explorer/details/15/documentation?version=1.99">BSP Sites API</a><br>
-                    <a href="https://developer.ncr.com/portals/dev-portal/api-explorer/details/8/documentation?version=2.99">BSP Catalog API</a><br>
-                    <a href="https://developer.ncr.com/portals/dev-portal/api-explorer/details/9/documentation?version=3.99">BSP Order API</a><br>
-                    <a href="https://developer.ncr.com/portals/dev-portal/help-center/documentation/66">Authentication</a><br>
+                    <a href="https://requests.kennethreitz.org/en/master/user/quickstart/" style="color:#31A7E5">Python Requests Library</a><br>
+                    <a href="https://developer.ncr.com/portals/dev-portal/api-explorer" style="color:#31A7E5">DevEx Portal</a><br>
+                    <a href="https://developer.ncr.com/portals/dev-portal/api-explorer/details/15/documentation?version=1.99" style="color:#31A7E5;">BSP Sites API</a><br>
+                    <a href="https://developer.ncr.com/portals/dev-portal/api-explorer/details/8/documentation?version=2.99" style="color:#31A7E5">BSP Catalog API</a><br>
+                    <a href="https://developer.ncr.com/portals/dev-portal/api-explorer/details/9/documentation?version=3.99" style="color:#31A7E5">BSP Order API</a><br>
+                    <a href="https://developer.ncr.com/portals/dev-portal/help-center/documentation/66" style="color:#31A7E5">Authentication</a>
                 </p>
+                <input type=button class="btn-about-link-secondary" onclick="parent.open('https://github.com/NCR-Corporation/sample-app-burgers')" value="Go to GitHub">
+                <div class="nav-btn-container-long">
+                    <input type=button class="btn-about" onclick="onClickNavButton('li-authentication', 'Authentication')" value="Back">
+                </div>
             </div>
-            <a href="#Getting_Started" class="btn btn-custom">Scroll Top</a>
 
         </main>
+
     </div>
 </div>
-
-
-
 
 {% endblock content %}
