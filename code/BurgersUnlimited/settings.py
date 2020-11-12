@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'burger',
+    'users.apps.UsersConfig',
+    'crispy_forms',
 
 
 ]
@@ -68,7 +70,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
             'libraries': {
-                'custom_tags': 'burger.templatetags.custom_tags'
+
             }
         },
     },
@@ -124,15 +126,14 @@ USE_TZ = True
 STATICFILES_DIRS = [STATIC_DIR]
 STATIC_URL ='/static/'
 
-#DO NOT COMMIT THESE VALUES
-NEP_USERNAME = ''
-NEP_PASSWORD = ''
-NEP_APPLICATION_KEY = ''
-NEP_ORGANIZATION = ''
-NEP_SHARED_KEY = ''
-CENSUS_API_KEY = ''
-HMAC_SHARED_KEY = ''
-HMAC_SECRET_KEY = ''
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+MEDIA_URL='/media/'
 
-# Locations of the resturants saved in a id, site name pattern
-LOCATIONS = {}
+LOGIN_URL ='login'
+LOGIN_REDIRECT_URL = '/burger'
+#LOGOUT_REDIRECT_URL = '/burger'
+
+CRISPY_TEMPLATE_PACK ='bootstrap4'
+
+
+#DO NOT COMMIT THESE VALUES

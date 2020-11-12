@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f8237154-2267-49a5-960f-1a74cc9555fd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sample-app-burgers.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/BurgersUnlimited/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/BurgersUnlimited/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/BurgersUnlimited/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/BurgersUnlimited/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/burger/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/users/signals.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/burger/templatetags/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/burger/templatetags/custom_tags.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/burger/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/burger/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/templates/addressNotFound.html" beforeDir="false" afterPath="$PROJECT_DIR$/code/burger/templates/addressNotFound.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/code/burger/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/templates/confirmation.html" beforeDir="false" afterPath="$PROJECT_DIR$/code/burger/templates/confirmation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/templates/documentation.html" beforeDir="false" afterPath="$PROJECT_DIR$/code/burger/templates/documentation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/code/burger/templates/error.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/templates/findRestaurant.html" beforeDir="false" afterPath="$PROJECT_DIR$/code/burger/templates/findRestaurant.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/templates/highlandsMenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/code/burger/templates/highlandsMenu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/code/burger/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/templates/midtownMenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/code/burger/templates/midtownMenu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/templates/payment.html" beforeDir="false" afterPath="$PROJECT_DIR$/code/burger/templates/payment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/templates/southlandMenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/code/burger/templates/southlandMenu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/templates/viewCart.html" beforeDir="false" afterPath="$PROJECT_DIR$/code/burger/templates/viewCart.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

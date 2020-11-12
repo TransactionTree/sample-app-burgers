@@ -16,9 +16,6 @@
 </head>
 
 
-
-
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark custom-navbar">
   <div class="container-fluid">
     <a class="navbar-brand" href="{% url 'index' %}">
@@ -29,10 +26,27 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto smooth-scroll d-lg-flex align-items-center mt-4" style="margin-bottom:0px; padding-bottom;0px">
-           <li class="nav-item  ">
+           <li class="nav-item">
                <a class="nav-link" href="{% url 'documentation' %}">Documentation</a>
            </li>
 
+         {% if user.is_authenticated %}
+
+           <li class="nav-item h-100">
+                    <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+                </li>
+
+                <li class="nav-item h-100">
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+           {% else %}
+                <li class="nav-item h-100">
+                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+          {% comment %} <li class="nav-item h-100">
+               <a class="nav-link" href="{% url 'register' %}">Register</a>
+           </li> {% endcomment %}
+           {% endif %}
            <li class="nav-item h-100">
             <a class="nav-link" href="{% url 'viewCart' %}"> <i class="fa fa-shopping-cart fa-lg" style="color:#ffffff;"></i></a>
 

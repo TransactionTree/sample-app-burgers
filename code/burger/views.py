@@ -1,18 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
-# Create your views here.
-
-import http.client
-import requests
-from requests.auth import HTTPBasicAuth
-from django.http import HttpResponse
-from django.http import JsonResponse
 from django.conf import settings
 import auxMethods
 import catalogMaker
-from rest_framework.views import APIView
-from rest_framework.decorators import api_view
-import json
 
 HIGHLANDS = settings.LOCATIONS['Burgers Unlimited Highlands']
 SOUTHLAND = settings.LOCATIONS['Burgers Unlimited Southland']
