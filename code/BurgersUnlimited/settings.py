@@ -174,10 +174,7 @@ DEBUG_TOOLBAR_CONFIG = {
     'SHOW_TOOLBAR_CALLBACK': lambda request: True,
     'SHOW_COLLAPSED': True,
 }
-DEBUG_TOOLBAR_PANELS = ['requests_panel.panel.RequestsDebugPanel',
-                        'debug_toolbar.panels.timer.TimerPanel',
-                        'debug_toolbar.panels.settings.SettingsPanel',
-                        ]
+DEBUG_TOOLBAR_PANELS = ['requests_panel.panel.RequestsDebugPanel']
 
 #DO NOT COMMIT THESE VALUES
 NEP_USERNAME = ''
