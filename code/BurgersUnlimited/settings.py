@@ -170,7 +170,9 @@ LOGGING = {
 INTERNAL_IPS = ('127.0.0.1',)
 
 DEBUG_TOOLBAR_CONFIG = {
-    'DISABLE_PANELS': {'debug_toolbar.panels.sql.SQLPanel'}
+    'DISABLE_PANELS': {'debug_toolbar.panels.sql.SQLPanel'},
+    'SHOW_TOOLBAR_CALLBACK': lambda request: True,
+    'SHOW_COLLAPSED': True,
 }
 DEBUG_TOOLBAR_PANELS = ['requests_panel.panel.RequestsDebugPanel',
                         'debug_toolbar.panels.timer.TimerPanel',
@@ -187,5 +189,5 @@ HMAC_SHARED_KEY = ''
 HMAC_SECRET_KEY = ''
 CENSUS_API_KEY = ''
 
-# Locations of the resturants saved in a id, site name pattern
+# Locations of the restaurants saved in a id, site name pattern
 LOCATIONS = {}
