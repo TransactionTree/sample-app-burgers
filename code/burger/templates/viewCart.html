@@ -46,24 +46,28 @@
 {% block javascript %}
 <script>
     $(document).ready(function(){
+
         var userCart = grabCart();
-        userCart = JSON.stringify({'cart':userCart})
+
+        //userCart = JSON.stringify(userCart)
+
+        //userCart[0]=JSON.stringify(userCart[0])
+
+        var data = {'userCart':userCart};
+        console.log(data);
 
         $("#Checkout").click(function(){
 
-       var name = 'Joe';
-        var age = 20;
+
 
 $.ajax({
-    url:"/burger/confirmation",
-     headers:{
-    'X-CSRFToken': '{{csrf_token}}'
-    },
+    url:"/burger/shoppingCart/",
+    headers:{"X-CSRFToken": "{{csrf_token}}"},
     type: "POST",
-
-    data: {'cart':userCart},
+    contentType:"application/json;charset=utf-8",
+    data: JSON.stringify({"userCart":userCart}),
     success:function(response){
-        //alert(" I was successful");
+        console.log(data);
 
     },
     complete:function(){
