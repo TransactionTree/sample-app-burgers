@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.conf import settings
 import auxMethods
 import catalogMaker
+import order
 import json
 from django.views.decorators.cache import never_cache
 
@@ -74,11 +75,20 @@ def viewCart(request):
 
 
 def confirmation(request):
- global SHOPPINGCART
- context = {'test':SHOPPINGCART}
- 
+    global SHOPPINGCART
+    if request.user.is_authenticated:
+       user = {'email': request.user.email,
+               'first_name': request.user.first_name,
+               'last_name': request.user.last_name}
+       orderId = order.createOrder(SHOPPINGCART,user)
+       getOrder = order.getOrder(orderId)
 
- return render(request, 'confirmation.html',context)
+
+
+
+    context = {'test':SHOPPINGCART,'orderId':orderId,'getOrder':getOrder}
+
+    return render(request, 'confirmation.html',context)
 
 def shoppingCart(request):
     global SHOPPINGCART

@@ -1,11 +1,15 @@
 {% extends 'base.html' %}
-{% load static %}
-
-{% block title %}<title>The End</title>{% endblock %}
 
 {% block content %}
 
-Your Shopping Cart order is:
-{{ test }}
+<h6>The userCart was: {{test}}</h6>
 
-{% endblock %}
+
+{{user.email}}
+{{user.first_name}}
+{{user.last_name}}
+<h5> DID THIS WORK</h5>
+{{orderId}}
+{{getOrder}}
+
+{% endblock content %}
