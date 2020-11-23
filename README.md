@@ -34,9 +34,9 @@ You will need to have the following:
 Ensure that you have access to your Shared Key, Secret Key, NEP Application Key and NEP Organzation. Inside of the settings file, ( found in /ncr-burgers-demo/code/BugersUnlimited) fill in those values with your credientials. Once you have filled in those values you will need to create your sites and catalog.
  
 1. Creating your Sites
-   * As part of your initial configuration, you will need to set up at least two sites; for instructions as to how to create a site, see the [site documentation](https://developer.ncr.com/portals/dev-portal/api-explorer/details/15/documentation?version=1.99&path=post_sites_import), or the section about sites on the [documentation page](https://burgersdemo.ncrcloud.com/burger/documentation#Sites_Quick_Start) within the application.
+   * As part of your initial configuration, you will need to set up at least two sites; for instructions as to how to create a site, see the [site documentation](https://developer.ncr.com/portals/dev-portal/api-explorer/details/15/documentation?version=1.99&path=post_sites_import), or the section about sites on the [documentation page](https://burgersdemo.ncrcloud.com/burger/about#Sites_Quick_Start) within the application.
 2. Creating your Catalog 
-   * As part of your initial configuration, you will need to set up your catalog, which will serve as your menu; for instructions as to how to create a catalog, see the [catalog documentation](https://developer.ncr.com/portals/dev-portal/api-explorer/details/8/documentation?version=2.99), or the section about catalogs on the [documentation page](https://burgersdemo.ncrcloud.com/burger/documentation#Tutorial_Catalog) within the application.
+   * As part of your initial configuration, you will need to set up your catalog, which will serve as your menu; for instructions as to how to create a catalog, see the [catalog documentation](https://developer.ncr.com/portals/dev-portal/api-explorer/details/8/documentation?version=2.99), or the section about catalogs on the [documentation page](https://burgersdemo.ncrcloud.com/burger/about#Tutorial_Catalog) within the application.
    
 Once you have completed the installation and configuration of the developer enviroment, you are ready to use the sample app.
 
@@ -68,7 +68,7 @@ The sample app should open up to the main page. The user can input an address in
 
 > If you do not set up your sites and catalog, the sample app will not function correctly.
 
-If you are using the sample app to learn more about the BSP HMAC algorithm, see the [HMAC](https://burgersdemo.ncrcloud.com/burger/documentation#Authentication_HMAC) section of the documentation within the application and check out the [HMACAuth](code/HMACAuth.py) file in the /ncr-burger-demo/code folder.
+If you are using the sample app to learn more about the BSP HMAC algorithm, see the [HMAC](https://burgersdemo.ncrcloud.com/burger/about#Authentication_HMAC) section of the documentation within the application and check out the [HMACAuth](code/HMACAuth.py) file in the /ncr-burger-demo/code folder.
 
 ## Troubleshooting
 If the **Profiler** tab is missing in the application, check the browser inspector for a console error about, "*Failure to load module script: The server responded with a non JavaScript MIME type..."* This issue may be caused by improper content mapping with Django's ```runserver``` command. Please refer to [these docs](https://django-debug-toolbar.readthedocs.io/en/latest/installation.html#troubleshooting) for more information on troubleshooting this issue.
