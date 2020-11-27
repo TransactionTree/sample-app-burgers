@@ -4,6 +4,34 @@
 {% block content %}
 {% include 'profileBase.html' %}
 
-<a class="ml-2" href="{% url 'accountInfo' %}">Account Info</a>
+<!--<div class="container-fluid">
+    <div class="row ">
+
+    <div class="sidebar">
+        <div class ="list-group list-group-root well make-me-sticky sidebar">
+            <h4 class="sidebar-h4">Sample App</h4>
+           <ul class="list">
+               <li class="list-section">Favorite Orders</li>
+               <li class="list-section">Payments</li>
+               <li class="list-section"><a class="ml-2" href="{% url 'accountInfo' %}">Settings</a></li>
+
+           </ul>
+            </div>
+
+
+        </div>
+
+    <main class="col-md-9 col-xl-9 py-md-3 pl-md-5" role="main">
+        <p>Order History</p>
+        {{order}}
+
+    </main>
+    </div>
+</div>
+
+
+  <a class="ml-2" href="{% url 'accountInfo' %}">Account Info</a>
+</div> -->
+
 
 {% endblock content %}

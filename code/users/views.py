@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib import messages
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from django.contrib.auth.decorators import login_required
+import order
 
 
 def register(request):
@@ -19,7 +20,14 @@ def register(request):
 
 @login_required()
 def profile(request):
-    return render(request,'profile.html')
+
+    rawOrderhistory = order.getOrders(request.user.email)
+    orderhistory = order.prepareOrder(rawOrderhistory)
+    print(rawOrderhistory)
+
+    context = {'orderhistory': orderhistory}
+
+    return render(request,'profile.html',context)
 
 @login_required()
 def accountInfo(request):

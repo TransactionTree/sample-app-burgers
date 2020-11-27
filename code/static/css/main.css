@@ -73,10 +73,10 @@ a{
     color: #7ed957;
 }
 
-card-text{
-    padding-right: 5px;
-    padding-left:5px;
-}
+/*card-text{
+    padding-right: 20px;
+    padding-left:20px;
+} */
 
 body,html{
     height: 100%;
@@ -88,6 +88,11 @@ body,html{
        border-radius:50%;
        background: #7ed957;
     }
+
+
+.responsive{
+
+}
 /* Sidebar code and css found from codepen:  https://codepen.io/mouse0270/pen/wEYyqx  Author: Robert McIntosh */
 
 

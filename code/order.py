@@ -68,64 +68,33 @@ def getOrder(orderId):
     result = res.json()
     print(result)
 
-def getOrders():
+def getOrders(customerEmail):
     url = 'https://gateway-staging.ncrcloud.com/order/3/orders/1/find?pageNumber=0&pageSize=10'
 
-    payload = "{\"customerEmail\":\"test@ncr.com\",\"returnFullOrders\":true}"
+    payload = "{\"customerEmail\":\"%s\",\"returnFullOrders\":true}" %customerEmail
 
     res = requests.post(url, payload, auth=(HMACAuth()))
     result = res.json()
-    print(result)
+    return result
 
+def prepareOrder(orderhistoryJSON):
+    orderhistory =[]
 
+    for item in orderhistoryJSON['pageContent']:
+        total = 0
+        order = []
 
-'''
-def doubleQ(dict):
-    return (json.dumps(dict))
-def createPayload(dict):
-    eDict = {}
-    quantity = {
-        "unitOfMeasure": "EA",
-        "unitOfMeasureLabel": "",
-        "value": dict['qty'],
-    }
-    unitPrice = dict["price"]
-    productId = {
-        "type": "",
-        "value": dict['item'],
-    }
-    eDict.update({"productId": productId})
-    eDict.update({"quantity": quantity})
-    eDict.update({"unitPrice": unitPrice})
+        for foodline in item['orderLines']:
+            itemName = foodline['productId']['value']
+            qty = (foodline['quantity']['value'])
+            price = float(foodline['unitPrice'])
+            order.append(itemName)
+            order.append(qty)
+            order.append(price)
+            total += qty * price
 
-    #print((eDict.get('unitPrice')))
-    #print(eDict)
-    return eDict
-def createOrder(cart):
+        order.append(total)
+        orderhistory.append(order)
+    #print(orderhistory)
 
-    results = []
-
-    for dict in range(len(cart)):
-        results.append(createPayload(cart[dict]))
-    modified_results = doubleQ(results)
-
-    customer={
-        "email": "test@ncr.com",
-        "firstName": "Testy",
-        "lastName": "McTest Test"
-    }
-
-    modified_customer = doubleQ(customer)
-    payload = "{\"comments\":\"This is a test4\",\"customer\":%s,\"orderLines\":%s}"%(modified_customer,modified_results)
-    url = 'https://gateway-staging.ncrcloud.com/order/orders'
-    res = requests.post(url, payload, auth=(HMACAuth(settings.LOCATIONS["Burgers Unlimited Southland"])))
-    result = res.json()
-    print(result)
-    return result['id']
-
-
-'''
-
-
-#getOrders()
-getOrder('13101291033401619317')
+    return orderhistory

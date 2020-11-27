@@ -3,9 +3,61 @@
 
 
 {% block content %}
-{% include 'profileBase.html' %}
+<br>
+<div class="container">
+    <div class="main-body">
 
-  <form method="POST" enctype="multipart/form-data">
+          <!-- Breadcrumb -->
+          <nav aria-label="breadcrumb" class="main-breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/burger">Home</a></li>
+                <li class="breadcrumb-item"> <a href="/users/profile">User Profile</a></li>
+              <li class="breadcrumb-item active" aria-current="page"> Account Settings </li>
+            </ol>
+          </nav>
+          <!-- /Breadcrumb -->
+
+          <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <img src="{{ user.profile.image.url }}" alt="Profile Picture" class="rounded-circle" width="150">
+                    <div class="mt-3">
+                      <h4>{{user.username}}</h4>
+                      <p class="text-muted font-size-sm">Atlanta, GA</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+               <!-- Sidebar -->
+              <div class="card mt-3">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap list-group-item-action">
+					  <h6 class="mb-0"><a href="{% url 'accountInfo' %}">Edit Account Settings</a></h6>
+					<li class="list-group-item d-flex justify-content-between align-items-center flex-wrap list-group-item-action">
+					  <h6 class="mb-0"><a href="">Coming Soon</a></h6>
+					<li class="list-group-item d-flex justify-content-between align-items-center flex-wrap list-group-item-action">
+					  <h6 class="mb-0"><a href="">Coming Soon</a></h6>
+					<li class="list-group-item d-flex justify-content-between align-items-center flex-wrap list-group-item-action">
+					  <h6 class="mb-0"><a href="">Coming Soon</a></h6>
+					<li class="list-group-item d-flex justify-content-between align-items-center flex-wrap list-group-item-action">
+					  <h6 class="mb-0"><a href="">Coming Soon</a></h6>
+					<li class="list-group-item d-flex justify-content-between align-items-center flex-wrap list-group-item-action">
+					  <h6 class="mb-0"><a href="">Coming Soon</a></h6>
+					<li class="list-group-item d-flex justify-content-between align-items-center flex-wrap list-group-item-action">
+					  <h6 class="mb-0"><a href="">Coming Soon</a></h6>
+
+
+
+
+
+                </ul>
+              </div>
+            </div>
+            <div class ="col-md-8">
+                 <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <fieldset class="form-group">
             <legend class="border-bottom mb-4">Profile Info</legend>
@@ -16,6 +68,15 @@
             <button class="btn btn-outline-info" type="submit">Update</button>
         </div>
     </form>
+
+
+            </div>
+
+		  </div>
+	</div>
+</div>
+
+
 
 
 {% endblock content %}

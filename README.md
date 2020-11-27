@@ -11,6 +11,7 @@ In future updates, we hope to capture the API calls made by the server visually,
 * __[Setting up the Developer Environment](#setting-up-the-developer-environment)__
 * __[Usage](#usage)__
 * __[Notes](#notes)__
+* __[Troubleshooting](#troubleshooting)__
 * __[License](#license)__
 
 ## Installation
@@ -18,14 +19,18 @@ You will need to have the following:
 1. Python 3.0 version or [higher](https://www.python.org/downloads/).
 2. A Python IDE, we chose [Pycharm](https://www.jetbrains.com/pycharm/download/#section=mac).
 3. Django latest version.
-   * Open Pycharm terminal and type ```$ python3 -m pip install Django```
-4. Python Requests Library
-   * Open Pycharm terminal and type ```$ python3 -m install requests```
-5. Crispy Forms
-   * Open Pycharm terminal and type ```$ pip install django-crispy-forms```
-6. Django Rest Framework
-   * Open Pycharm terminal and type ```$ pip -m install djangorestframework```
-   
+    * Open Pycharm terminal and type ```$ python3 -m pip install Django```
+4. Python Requests module
+    * Open PyCharm terminal and type ```$ python3 -m pip install requests```   
+5. Django Packages. Run the following commands in PyCharm terminal.
+    * Django Compressor ```$ python3 -m pip install django_compressor```
+    * Django REST framework ```$ python3 -m pip install djangorestframework```
+    * Django Debug Toolbar ```$ python3 -m pip install django-debug-toolbar```
+    * django-requests-debug-toolbar ```$ python3 -m pip install django-requests-debug-toolbar```
+    * django-crispy-forms ```$ python3 -m pip install django-crispy-forms```
+    * django-web-profiler ```$ python3 -m pip install django-web-profiler```
+6. Pillow library
+    * Open PyCharm terminal and type ```$ python3 -m pip install pillow```    
 ## Setting up the Developer Environment   
  
 Ensure that you have access to your Shared Key, Secret Key, NEP Application Key and NEP Organzation. Inside of the settings file, ( found in /ncr-burgers-demo/code/BugersUnlimited) fill in those values with your credientials. Once you have filled in those values you will need to create your sites and catalog.
@@ -61,6 +66,10 @@ The sample app should open up to the main page. The user can input an address in
 !! If you do not set up your sites and catalog, the sample app will not function correctly.
 
 If you are using the sample app to learn more about the BSP HMAC algorithm, see the [HMAC](https://burgersdemo.ncrcloud.com/burger/documentation#Authentication_HMAC) section of the documentation within the application and check out the [HMACAuth](code/HMACAuth.py) file in the /ncr-burger-demo/code folder.
+
+## Troubleshooting
+
+If the __Profiler__ tab is missing in the application, check the browser inspector for a console error about, <em> "Failure to load module script: The server responded with a non JavaScript MIME type..."</em> This issue may be caused by improper content mapping with Django's runserver command. Please refer to [these docs](https://django-debug-toolbar.readthedocs.io/en/latest/installation.html#troubleshooting) for more information on troubleshooting this issue.
 
 ## License
 This sample app project is released under the Apache 2.0 license. The license's full text can be found [here](https://github.com/NCR-Corporation/sample-app-burgers/blob/main/LICENSE).
