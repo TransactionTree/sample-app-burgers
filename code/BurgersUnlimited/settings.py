@@ -126,7 +126,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATICFILES_DIRS = [STATIC_DIR]
-STATIC_URL ='/static/'
+STATIC_URL = '/static/'
 
 # Logging
 # https://docs.djangoproject.com/en/3.1/topics/logging/
@@ -143,7 +143,7 @@ LOGGING = {
     },
     'formatters': {
         'standard': {
-            'format' : "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s",
+            'format': "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s",
         },
     },
     'handlers': {
@@ -176,7 +176,7 @@ DEBUG_TOOLBAR_CONFIG = {
 }
 DEBUG_TOOLBAR_PANELS = ['requests_panel.panel.RequestsDebugPanel']
 
-#DO NOT COMMIT THESE VALUES
+# DO NOT COMMIT THESE VALUES
 NEP_USERNAME = ''
 NEP_PASSWORD = ''
 NEP_APPLICATION_KEY = ''
