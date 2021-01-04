@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ $.Release.Name }}
@@ -10,6 +10,11 @@ spec:
   {{- if .Values.Scaling.Enabled }}
   replicas: {{ .Values.Scaling.DefaultReplicas }}
   {{- end }}
+  selector:
+    matchLabels:
+      app: {{ .Values.Master.App.Prefix }}
+      version: {{ $.Chart.Version }}
+      release: {{ $.Release.Name }}
   strategy: {}
   template:
     metadata:
